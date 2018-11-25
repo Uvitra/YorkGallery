@@ -3,11 +3,12 @@ import Helmet from 'react-helmet'
 
 import Navbar from '../components/Navbar'
 // import './all.sass'
+import './constants.less'
 import './styles.less'
 
 const TemplateWrapper = ({ children }) => (
 	<div>
-		<Helmet title="Home | Gatsby + Netlify CMS" />
+		<Helmet title="Design at York Gallery" />
 		<Navbar />
 		<div>{children}</div>
 	</div>
