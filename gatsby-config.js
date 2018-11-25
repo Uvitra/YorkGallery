@@ -1,9 +1,10 @@
 module.exports = {
 	siteMetadata: {
-		title: 'Gatsby + Netlify CMS Starter',
+		title: 'Design at York Gallery',
 	},
 	plugins: [
 		'gatsby-plugin-react-helmet',
+		'gatsby-plugin-less',
 		'gatsby-plugin-sass',
 		{
 			// keep as first gatsby-source-filesystem plugin for gatsby image support
