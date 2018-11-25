@@ -4,6 +4,6 @@ title: A Sample Title
 date: 2018-11-25T02:45:43.460Z
 description: A Sample Description
 tags:
-  - A Sample Tag
+  - Tag
 ---
 A Sample Body
