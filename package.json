@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "author": "Aaron Vince",
   "dependencies": {
+    "ajv": "^6.6.2",
     "bulma": "^0.7.0",
     "gatsby": "^2.0.0",
     "gatsby-image": "^2.0.10",
@@ -19,6 +20,7 @@
     "gatsby-source-filesystem": "^2.0.1",
     "gatsby-transformer-remark": "^2.1.1",
     "gatsby-transformer-sharp": "^2.1.1",
+    "immutable": "^4.0.0-rc.12",
     "less": "^3.8.1",
     "lodash": "^4.17.5",
     "lodash-webpack-plugin": "^0.11.4",
@@ -29,6 +31,8 @@
     "react": "^16.2.0",
     "react-dom": "^16.4.1",
     "react-helmet": "^5.2.0",
+    "slate": "^0.44.9",
+    "tunnel-agent": "^0.6.0",
     "uuid": "^3.2.1"
   },
   "keywords": [
