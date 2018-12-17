@@ -9,6 +9,8 @@ export default class IndexPage extends React.Component {
 		const { data } = this.props
 		const { edges: posts } = data.allMarkdownRemark
 
+		console.log(posts)
+
 		return (
 			<Layout>
 				<section className="section">
@@ -17,12 +19,14 @@ export default class IndexPage extends React.Component {
 							.map(({ node: post }) => (
 								<div
 									className="content"
-									style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
+									style={{ }}
 									key={post.id}
 								>
 									<p>
 										<Link className="has-text-primary" to={post.fields.slug}>
 											{post.frontmatter.title}
+											<br />
+											{post.frontmatter.tags}
 										</Link>
 										<span> &bull; </span>
 										<small>{post.frontmatter.date}</small>
