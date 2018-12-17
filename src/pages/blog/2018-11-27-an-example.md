@@ -1,9 +1,12 @@
 ---
 templateKey: blog-post
-title: An example
-date: 2018-11-27T20:05:18.275Z
-description: description
+title: exampleTitle
+projectName: exampleProjectName
+studentName: exampleStudentName
+date: 2018-12-17T01:05:18.275Z
+description: exampleDescription
 tags:
-  - tags
+  - exampleTag1
+  - exampleTag2
 ---
-dafkgav
+exampleBody
