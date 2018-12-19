@@ -17,12 +17,13 @@ collections:
       - {label: "Project Name", name: "projectName", widget: "string"}
       - {label: "Student Name", name: "studentName", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Description", name: "description", widget: "text", required: false}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
       - {label: "Tags", name: "tags", widget: "list"}
-      - label: "Featured Image"
-        name: "thumbnail"
+      - label: "Images"
+        name: "projectImage"
         widget: "image"
+        allow_multiple: true
         media_library:
           config:
             multiple: true
