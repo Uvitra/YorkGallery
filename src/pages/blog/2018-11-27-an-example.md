@@ -8,5 +8,6 @@ description: exampleDescription
 tags:
   - exampleTag1
   - exampleTag2
+projectImage: /img/products-grid1.jpg
 ---
 exampleBody
