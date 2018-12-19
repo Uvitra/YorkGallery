@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: Digital Divide
+title: Digital Divide by Christine Chan
 projectName: Digital Divide
 studentName: Christine Chan
 date: 2018-12-19T17:19:02.474Z
