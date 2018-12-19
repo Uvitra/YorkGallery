@@ -1,8 +1,8 @@
 ---
 templateKey: blog-post
 title: exampleTitle
-projectName: exampleProjectName
-studentName: exampleStudentName
+project: project name
+student: student name
 date: 2018-12-17T01:05:18.275Z
 description: exampleDescription
 tags:
