@@ -12,6 +12,7 @@ export default class IndexPage extends React.Component {
 		console.log(posts)
 
 		return (
+
 			<Layout>
 				<section className="section">
 					<div className="container">
@@ -22,28 +23,49 @@ export default class IndexPage extends React.Component {
 									style={{ }}
 									key={post.id}
 								>
-									<p>
-										<Link className="has-text-primary" to={post.fields.slug}>
-											{post.frontmatter.title}
-											<br />
-											{post.frontmatter.tags}
-										</Link>
-										<span> &bull; </span>
-										<small>{post.frontmatter.date}</small>
-									</p>
-									<p>
-										{post.excerpt}
-										<br />
-										<br />
-										<Link className="button is-small" to={post.fields.slug}>
-                      Keep Reading →
-										</Link>
-									</p>
+									<ul>
+										<li>
+											<Link className="has-text-primary" to={post.fields.slug}>
+												{post.frontmatter.title}
+											</Link>
+										</li>
+									</ul>
 								</div>
 							))}
 					</div>
 				</section>
 			</Layout>
+
+		// <Layout>
+		// 	<section className="section">
+		// 		<div className="container">
+		// 			{posts
+		// 				.map(({ node: post }) => (
+		// 					<div
+		// 						className="content"
+		// 						style={{ }}
+		// 						key={post.id}
+		// 					>
+		// 						<p>
+		// 							<Link className="has-text-primary" to={post.fields.slug}>
+		// 								{post.frontmatter.title}
+		// 							</Link>
+		// 							<span> &bull; </span>
+		// 							<small>{post.frontmatter.date}</small>
+		// 						</p>
+		// 						<p>
+		// 							{post.excerpt}
+		// 							<br />
+		// 							<br />
+		// 							<Link className="button is-small" to={post.fields.slug}>
+		//                 Keep Reading →
+		// 							</Link>
+		// 						</p>
+		// 					</div>
+		// 				))}
+		// 		</div>
+		// 	</section>
+		// </Layout>
 		)
 	}
 }

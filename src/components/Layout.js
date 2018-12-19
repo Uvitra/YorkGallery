@@ -10,6 +10,7 @@ const TemplateWrapper = ({ children }) => (
 	<div>
 		<Helmet>
 			<title>Design at York Gallery</title>
+			<meta charSet="utf-8" />
 		</Helmet>
 		<Navbar />
 		<div>{children}</div>
