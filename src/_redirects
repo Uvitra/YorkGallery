@@ -1,0 +1,2 @@
+# Redirect default Netlify subdomain to primary domain
+https://lucid-benz-89d561.netlify.com/* https://gallerytest.xyz/:splat 301!
