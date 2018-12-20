@@ -9,8 +9,6 @@ export default class IndexPage extends React.Component {
 		const { data } = this.props
 		const { edges: posts } = data.allMarkdownRemark
 
-		console.log(posts)
-
 		return (
 
 			<Layout>
@@ -31,8 +29,8 @@ export default class IndexPage extends React.Component {
 									<img
 										className="gallery-image"
 										key={post.id}
-										src={window.location.origin + post.frontmatter.projectImage.relativePath}
-										alt={post.frontmatter.description}
+										src="img/products-grid1.jpg" //{img/ + post.frontmatter.projectImage.absolutePath}// 
+										alt={post.id}
 									/>
 								))}
 						</div>
