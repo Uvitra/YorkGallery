@@ -12,7 +12,7 @@ const Navbar = () => (
 					</figure>
 				</Link>
 			</div>
-			<Link className="navbar-item" to="/interactivity">
+			<Link className="navbar-item navbar-selected" to="/interactivity">
         Interactivity
 			</Link>
 			<Link className="navbar-item" to="/typography">

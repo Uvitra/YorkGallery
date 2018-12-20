@@ -77,15 +77,42 @@ a {
 }
 
 .navbar-item {
-  color: black;
+  color: white;
   text-shadow: 0 0 5px hsla(0, 0%, 0%, 0.15);
+  text-decoration: none;
 }
 
-// .content {
-//   border: 1px solid #eaecee;
-//   padding: 2em 4em;
-// }
+.navbar-selected {
+  border: 1px solid white;
+  padding: 0.5em 1em;
+}
+
+// Student Names
+
+.student-names-flex-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .studentName {
+  color: white;
+  text-shadow: 0 0 5px hsla(0, 0%, 0%, 0.15);
   list-style: none;
+  margin: 1em 0;
+}
+
+// Background Images
+
+.images {
+  width: 100vw;
+  height: 100vh;
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+  background-size: contain;
 }

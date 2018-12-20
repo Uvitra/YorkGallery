@@ -14,24 +14,33 @@ export default class IndexPage extends React.Component {
 			<Layout>
 				<section className="section">
 					<div className="container">
-						<ul>
-							{posts
-								.map(({ node: post }) => (
-									<li className="studentName" key={post.id} >
-										{post.frontmatter.studentName}
-									</li>
-								))}
-						</ul>
+						<div className="student-names-flex-container">
+							<ul className="">
+								{posts
+									.map(({ node: post }) => (
+										<li className="studentName" key={post.id} >
+											{post.frontmatter.studentName}
+										</li>
+									))}
+							</ul>
+						</div>
 
 						<div className="images">
 							{posts
 								.map(({ node: post }) => (
-									<img
+									// <img
+									// 	className="gallery-image"
+									// 	key={post.id}
+									// 	src={'img/' + post.frontmatter.projectImage.relativePath}
+									// 	alt={post.id}
+									// />
+									<div
 										className="gallery-image"
-										key={post.id}
-										src="img/products-grid1.jpg" //{img/ + post.frontmatter.projectImage.absolutePath}// 
-										alt={post.id}
-									/>
+										style={{
+											backgroundImage: `url(${'img/' + post.frontmatter.projectImage.relativePath})`,
+										}}
+									>
+									</div>
 								))}
 						</div>
 					</div>
