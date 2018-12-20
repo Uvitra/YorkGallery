@@ -25,9 +25,7 @@ export default class IndexPage extends React.Component {
 								>
 									<ul>
 										<li>
-											<Link className="has-text-primary" to={post.fields.slug}>
-												{post.frontmatter.title}
-											</Link>
+											{post.frontmatter.title}
 										</li>
 									</ul>
 								</div>
