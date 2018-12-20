@@ -6,7 +6,7 @@ import './constants.less'
 import './gallery-style.less'
 
 const TemplateWrapper = ({ children }) => (
-	<div>
+	<div className="complete-wrapper">
 		<Helmet>
 			<title>Design at York Gallery</title>
 			<meta name="Description" content="A Gallery of Work created by Students enrolled in Design at York." />
