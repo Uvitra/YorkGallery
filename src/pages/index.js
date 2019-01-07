@@ -9,6 +9,8 @@ export default class IndexPage extends React.Component {
 		const { data } = this.props
 		const { edges: posts } = data.allMarkdownRemark
 		let backgroundGalleryImages = []
+		backgroundGalleryImages = posts.map(({ node: post }) => (`url(${'img/' + post.frontmatter.projectImage.relativePath})`))
+		console.log(backgroundGalleryImages)
 
 		return (
 
@@ -35,14 +37,16 @@ export default class IndexPage extends React.Component {
 									// 	src={'img/' + post.frontmatter.projectImage.relativePath}
 									// 	alt={post.id}
 									// />
+
+									// backgroundGalleryImages += {post.frontmatter.projectImage.relativePath}
+
 									<div
 										className="gallery-image"
 										key={post.id}
 										style={{
-											backgroundImage: `url(${'img/' + post.frontmatter.projectImage.relativePath})`,
+											backgroundImage: `url(${'img/' + post.frontmatter.projectImage.relativePath})`
 										}}
 									>
-									backgroundGalleryImages += `url(${'img/' + post.frontmatter.projectImage.relativePath})`;
 									</div>
 								))}
 						</div>
