@@ -29,26 +29,12 @@ export default class IndexPage extends React.Component {
 						</div>
 
 						<div className="images">
-							{posts
-								.map(({ node: post }) => (
-									// <img
-									// 	className="gallery-image"
-									// 	key={post.id}
-									// 	src={'img/' + post.frontmatter.projectImage.relativePath}
-									// 	alt={post.id}
-									// />
-
-									// backgroundGalleryImages += {post.frontmatter.projectImage.relativePath}
-
-									<div
-										className="gallery-image"
-										key={post.id}
-										style={{
-											backgroundImage: `url(${'img/' + post.frontmatter.projectImage.relativePath})`
-										}}
-									>
-									</div>
-								))}
+							<div
+								className="gallery-image"
+								// key={post.id}
+								style={{backgroundImage:backgroundGalleryImages[1]}}
+							>
+							</div>
 						</div>
 					</div>
 				</section>
