@@ -8,6 +8,7 @@ export default class IndexPage extends React.Component {
 	render() {
 		const { data } = this.props
 		const { edges: posts } = data.allMarkdownRemark
+		let backgroundGalleryImages = []
 
 		return (
 
@@ -36,10 +37,12 @@ export default class IndexPage extends React.Component {
 									// />
 									<div
 										className="gallery-image"
+										key={post.id}
 										style={{
 											backgroundImage: `url(${'img/' + post.frontmatter.projectImage.relativePath})`,
 										}}
 									>
+									backgroundGalleryImages += `url(${'img/' + post.frontmatter.projectImage.relativePath})`;
 									</div>
 								))}
 						</div>
