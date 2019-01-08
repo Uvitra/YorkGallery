@@ -16,9 +16,18 @@ export default class IndexPage extends React.Component {
 
 			<Layout>
 				<section className="section">
-					<div className="container">
+					<div className="names-image-container">
+						<div className="background-image-container">
+							<div
+								className="gallery-image"
+								// key={post.id}
+								style={{backgroundImage:backgroundGalleryImages[0]}}
+							>
+							</div>
+						</div>
+
 						<div className="student-names-flex-container">
-							<ul className="">
+							<ul className="names--unordered-list">
 								{posts
 									.map(({ node: post }) => (
 										<li className="studentName" key={post.id} >
@@ -26,15 +35,6 @@ export default class IndexPage extends React.Component {
 										</li>
 									))}
 							</ul>
-						</div>
-
-						<div className="images">
-							<div
-								className="gallery-image"
-								// key={post.id}
-								style={{backgroundImage:backgroundGalleryImages[1]}}
-							>
-							</div>
 						</div>
 					</div>
 				</section>
