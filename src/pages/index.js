@@ -2,18 +2,28 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import BackgroundImageGallery from '../components/BackgroundImageGallery'
 import Style from '../components/gallery-style.less'
 
 export default class IndexPage extends React.Component {
+	constructor (props) {
+		super(props)
+
+		this.state = {
+			backgroundGalleryImages: [],
+			currentBackgroundGalleryImage: ''
+		}
+	}
+
 	render() {
 		const { data } = this.props
 		const { edges: posts } = data.allMarkdownRemark
 		let backgroundGalleryImages = []
+		let currentBackgroundGalleryImage = ''
 		backgroundGalleryImages = posts.map(({ node: post }) => (`url(${'img/' + post.frontmatter.projectImage.relativePath})`))
-		console.log(backgroundGalleryImages)
+		console.log(this.state.backgroundGalleryImages)
 
 		return (
-
 			<Layout>
 				<section className="section">
 					<div className="names-image-container">
@@ -24,6 +34,7 @@ export default class IndexPage extends React.Component {
 								style={{backgroundImage:backgroundGalleryImages[0]}}
 							>
 							</div>
+							// <BackgroundImageGallery backgroundGalleryImages={this.state.backgroundGalleryImages} />
 						</div>
 
 						<div className="student-names-flex-container">
