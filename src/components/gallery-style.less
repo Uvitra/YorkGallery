@@ -80,12 +80,12 @@ time,
 mark,
 audio,
 video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	font-size: 100%;
+	vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -100,129 +100,121 @@ hgroup,
 menu,
 nav,
 section {
-  display: block;
+	display: block;
 }
 
 body {
-  line-height: 1;
+	line-height: 1;
 }
 
 ol,
 ul {
-  list-style: none;
+	list-style: none;
 }
 
 blockquote,
 q {
-  quotes: none;
+	quotes: none;
 }
 
 blockquote::before,
 blockquote::after,
 q::before,
 q::after {
-  content: '';
-  content: none;
+	content: '';
+	content: none;
 }
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 // --------- Start of Styles ----------
 
 // Global Styles
 .complete-wrapper {
-  font-family: sans-serif;
-  background: hsla(0, 0%, 50%, 1);
+	font-family: sans-serif;
+	background: hsla(0, 0%, 50%, 1);
 }
 
 a {
-  // text-decoration: none;
-  color: black;
-  // text-shadow: 1px 1px 15px hsla(210, 5%, 15%, 0.15);
-  transition: all 500ms;
+	// text-decoration: none;
+	color: black;
+	// text-shadow: 1px 1px 15px hsla(210, 5%, 15%, 0.15);
+	transition: all 500ms;
 }
 
 // Navbar styles
+
 .navbar {
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1em 2vw;
-  }
+	background: hsla(210, 1%, 25%, 1);
+}
+
+.navbar-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1em 2vw;
 }
 
 .logo-image img {
-  width: 88px;
+	width: 88px;
 }
 
 .navbar-item {
-  color: white;
-  text-shadow: 0 0 5px hsla(0, 0%, 0%, 0.15);
-  text-decoration: none;
+	color: white;
+	text-shadow: 0 0 5px hsla(0, 0%, 0%, 0.15);
+	text-decoration: none;
 }
 
 .navbar-selected {
-  border: 1px solid white;
-  padding: 0.5em 1em;
+	border: 1px solid white;
+	padding: 0.5em 1em;
 }
 
 // Stacked Names and Images Container
 
-// Old way
-// .names-image-container {
-//   position: relative;
-//
-//   .student-names-flex-container,
-//   .background-image-container {
-//     position: absolute;
-//   }
-// }
-
-// New Way
 .names-image-container {
-  display: grid;
-  grid-template-columns: 100vw;
-  grid-template-rows: 100vh;
+	display: grid;
+	grid-template-columns: 100vw;
+	grid-template-rows: 100vh;
+}
 
-  .student-names-flex-container,
-  .background-image-container {
-    grid-column: 1;
-    grid-row: 1;
-  }
+.student-names-flex-container,
+.background-image-container {
+	grid-column: 1;
+	grid-row: 1;
 }
 
 // Student Names
 
 .student-names-flex-container {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .studentName {
-  color: white;
-  text-shadow: 0 0 5px hsla(0, 0%, 0%, 0.15);
-  list-style: none;
-  margin: 1em 0;
+	color: white;
+	text-shadow: 0 0 5px hsla(0, 0%, 0%, 0.15);
+	list-style: none;
+	margin: 1em 0;
 }
 
 // Background Images
 
 .background-image-container {
-  width: 100vw;
-  height: 100vh;
+	width: 100vw;
+	height: 100vh;
 }
 
 .gallery-image {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: 0% 100%;
-  background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: 0% 100%;
+	background-repeat: no-repeat;
 }

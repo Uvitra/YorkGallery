@@ -4,7 +4,7 @@ import logo from '../../static/img/dept_large.png'
 
 const Navbar = () => (
 	<nav className="navbar is-transparent">
-		<div className="container">
+		<div className="navbar-container">
 			<div className="navbar-brand">
 				<Link to="/" className="navbar-item">
 					<figure className="logo-image">
@@ -13,22 +13,22 @@ const Navbar = () => (
 				</Link>
 			</div>
 			<Link className="navbar-item navbar-selected" to="/interactivity">
-        Interactivity
+				Interactivity
 			</Link>
 			<Link className="navbar-item" to="/typography">
-        Typography
+				Typography
 			</Link>
 			<Link className="navbar-item" to="/motion">
-        Motion
+				Motion
 			</Link>
 			<Link className="navbar-item" to="/information">
-        Information
+				Information
 			</Link>
 			<Link className="navbar-item" to="/communication">
-        Communication
+				Communication
 			</Link>
 			<Link className="navbar-item" to="/3d">
-        3D
+				3D
 			</Link>
 			<Link className="navbar-item" to="/about">
 				About
