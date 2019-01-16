@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 
 import Navbar from '../components/Navbar'
 
-const TemplateWrapper = ({ children }) => (
+const TemplateWrapper = ({ children, currentPageIndicator }) => (
 	<div className="complete-wrapper">
 		<Helmet>
 			<title>Design at York Gallery</title>
@@ -13,7 +13,7 @@ const TemplateWrapper = ({ children }) => (
 			/>
 			<meta charSet="utf-8" />
 		</Helmet>
-		<Navbar />
+		<Navbar currentPageIndicator={currentPageIndicator} />
 		<div>{children}</div>
 	</div>
 )

@@ -15,7 +15,7 @@ export default class IndexPage extends React.Component {
 		)
 
 		return (
-			<Layout>
+			<Layout currentPageIndicator="interactivity-selected">
 				<section className="section">
 					<div className="names-image-container">
 						<div className="background-image-container">
