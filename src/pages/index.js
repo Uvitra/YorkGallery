@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import BackgroundImageGallery from '../components/BackgroundImageGallery'
-import '../components/gallery-style.less'
+import IndexStyles from '../components/gallery-style.module.less'
 
 export default class IndexPage extends React.Component {
 	render() {
@@ -17,18 +17,18 @@ export default class IndexPage extends React.Component {
 
 		return (
 			<Layout>
-				<section className="section">
-					<div className="names-image-container">
-						<div className="background-image-container">
+				<section className={IndexStyles.section}>
+					<div className={IndexStyles.namesImageContainer}>
+						<div className={IndexStyles.backgroundImageContainer}>
 							<BackgroundImageGallery
 								backgroundGalleryImages={backgroundGalleryImages}
 							/>
 						</div>
 
-						<div className="student-names-flex-container">
-							<ul className="names--unordered-list">
+						<div className={IndexStyles.studentNamesFlexContainer}>
+							<ul className={IndexStyles.namesUnorderedList}>
 								{posts.map(({ node: post }) => (
-									<li className="studentName" key={post.id}>
+									<li className={IndexStyles.studentName} key={post.id}>
 										{post.frontmatter.studentName}
 									</li>
 								))}
@@ -68,6 +68,7 @@ export const pageQuery = graphql`
 						date(formatString: "MMMM DD, YYYY")
 						projectName
 						studentName
+						tags
 						projectImage {
 							absolutePath
 							relativePath

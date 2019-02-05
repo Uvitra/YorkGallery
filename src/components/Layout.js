@@ -1,10 +1,11 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import Navbar from '../components/Navbar'
+import Navbar from './Navbar'
+import IndexStyles from './gallery-style.module.less'
 
-const TemplateWrapper = ({ children, currentPageIndicator }) => (
-	<div className="complete-wrapper">
+const TemplateWrapper = ({ children }) => (
+	<div className={IndexStyles.completeWrapper}>
 		<Helmet>
 			<title>Design at York Gallery</title>
 			<meta
@@ -13,7 +14,7 @@ const TemplateWrapper = ({ children, currentPageIndicator }) => (
 			/>
 			<meta charSet="utf-8" />
 		</Helmet>
-		<Navbar currentPageIndicator={currentPageIndicator} />
+		<Navbar />
 		<div>{children}</div>
 	</div>
 )

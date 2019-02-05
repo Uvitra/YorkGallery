@@ -1,8 +1,10 @@
 import React from 'react'
 
+import IndexStyles from './gallery-style.module.less'
+
 const BackgroundImageGallery = ({ backgroundGalleryImages }) => (
 	<div
-		className="gallery-image"
+		className={IndexStyles.galleryImage}
 		// key={post.id}
 		style={{ backgroundImage: backgroundGalleryImages[1] }}
 	/>

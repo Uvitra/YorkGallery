@@ -2,35 +2,37 @@ import React from 'react'
 import { Link } from 'gatsby'
 import logo from '../../static/img/dept_large.png'
 
+import IndexStyles from './gallery-style.module.less'
+
 const Navbar = () => (
-	<nav className="navbar is-transparent">
-		<div className="navbar-container">
-			<div className="navbar-brand">
-				<Link to="/" className="navbar-item">
-					<figure className="logo-image">
+	<nav className={IndexStyles.navbar}>
+		<div className={IndexStyles.navbarContainer}>
+			<div className={IndexStyles.navbarBrand}>
+				<Link to="/" className={IndexStyles.navbarItem}>
+					<figure className={IndexStyles.logoImage}>
 						<img src={logo} alt="Design at York" />
 					</figure>
 				</Link>
 			</div>
-			<Link className="navbar-item" to="/interactivity">
+			<Link className={IndexStyles.navbarItem} to="/interactivity">
 				Interactivity
 			</Link>
-			<Link className="navbar-item" to="/typography">
+			<Link className={IndexStyles.navbarItem} to="/typography">
 				Typography
 			</Link>
-			<Link className="navbar-item" to="/motion">
+			<Link className={IndexStyles.navbarItem} to="/motion">
 				Motion
 			</Link>
-			<Link className="navbar-item" to="/information">
+			<Link className={IndexStyles.navbarItem} to="/information">
 				Information
 			</Link>
-			<Link className="navbar-item" to="/communication">
+			<Link className={IndexStyles.navbarItem} to="/communication">
 				Communication
 			</Link>
-			<Link className="navbar-item" to="/3d">
+			<Link className={IndexStyles.navbarItem} to="/3d">
 				3D
 			</Link>
-			<Link className="navbar-item" to="/about">
+			<Link className={IndexStyles.navbarItem} to="/about">
 				About
 			</Link>
 		</div>
