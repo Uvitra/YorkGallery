@@ -6,6 +6,5 @@ studentName: Rana Sollman
 date: 2018-12-19T17:54:40.984Z
 tags:
   - Digital
-projectImage: /img/ysdn3006_f16_ranasollman2.jpg
+projectImage: /img/ysdn3006_f16_ranasollman1.jpg
 ---
-

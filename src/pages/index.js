@@ -2,20 +2,21 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import BackgroundImageGallery from '../components/BackgroundImageGallery.js'
+import BackgroundImageGallery from '../components/BackgroundImageGallery'
 import '../components/gallery-style.less'
 
 export default class IndexPage extends React.Component {
 	render() {
 		const { data } = this.props
 		const { edges: posts } = data.allMarkdownRemark
-		const backgroundGalleryImages = posts.map(
-			({ node: post }) =>
-				`url(${'img/' + post.frontmatter.projectImage.relativePath})`
+		const backgroundGalleryImages = posts.map(({ node: post }) =>
+			post.frontmatter.projectImage != null
+				? `url(img/${post.frontmatter.projectImage.relativePath})`
+				: console.error(post)
 		)
 
 		return (
-			<Layout currentPageIndicator="interactivity-selected">
+			<Layout>
 				<section className="section">
 					<div className="names-image-container">
 						<div className="background-image-container">
