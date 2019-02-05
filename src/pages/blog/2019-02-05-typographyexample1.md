@@ -7,6 +7,6 @@ date: 2019-02-05T16:47:02.391Z
 description: TypographyExample1
 tags:
   - Typography
-projectImage: /img/860a3872462147.5be8923caab56.jpg
+projectImage: /img/kristian-strand-791607-unsplash.jpg
 ---
 
