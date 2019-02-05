@@ -2,13 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import logo from '../../static/img/dept_large.png'
 
-const Navbar = ({ currentPageIndicator }) => (
-// 	function() {
-// 		if (currentPageIndicator == "interactivity-selected") {
-// 			let interactivityTabSelected = '.selected'
-// 	}
-// }
-
+const Navbar = () => (
 	<nav className="navbar is-transparent">
 		<div className="navbar-container">
 			<div className="navbar-brand">
@@ -18,7 +12,7 @@ const Navbar = ({ currentPageIndicator }) => (
 					</figure>
 				</Link>
 			</div>
-			<Link className=`"navbar-item "{interactivityTabSelected}` to="/interactivity">
+			<Link className="navbar-item" to="/interactivity">
 				Interactivity
 			</Link>
 			<Link className="navbar-item" to="/typography">
