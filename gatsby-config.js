@@ -1,6 +1,7 @@
 module.exports = {
+	pathPrefix: '/img',
 	siteMetadata: {
-		title: 'Design at York Gallery',
+		title: 'Design at York Gallery'
 	},
 	plugins: [
 		'gatsby-plugin-react-helmet',
@@ -10,23 +11,24 @@ module.exports = {
 			resolve: 'gatsby-source-filesystem',
 			options: {
 				path: `${__dirname}/static/img`,
-				name: 'uploads',
-			},
+				name: 'uploads'
+			}
 		},
 		{
 			resolve: 'gatsby-source-filesystem',
 			options: {
 				path: `${__dirname}/src/pages`,
-				name: 'pages',
-			},
+				name: 'pages'
+			}
 		},
 		{
 			resolve: 'gatsby-source-filesystem',
 			options: {
 				path: `${__dirname}/src/img`,
-				name: 'images',
-			},
+				name: 'images'
+			}
 		},
+		'gatsby-plugin-lodash',
 		'gatsby-plugin-sharp',
 		'gatsby-transformer-sharp',
 		{
@@ -36,8 +38,8 @@ module.exports = {
 					{
 						resolve: 'gatsby-remark-relative-images',
 						options: {
-							name: 'uploads',
-						},
+							name: 'uploads'
+						}
 					},
 					{
 						resolve: 'gatsby-remark-images',
@@ -45,23 +47,22 @@ module.exports = {
 							// It's important to specify the maxWidth (in pixels) of
 							// the content container as this plugin uses this as the
 							// base for generating different widths of each image.
-							maxWidth: 2048,
-						},
-					},
-				],
-			},
+							maxWidth: 2048
+						}
+					}
+				]
+			}
 		},
 		{
 			resolve: 'gatsby-plugin-netlify-cms',
 			options: {
-				modulePath: `${__dirname}/src/cms/cms.js`,
-			},
+				modulePath: `${__dirname}/src/cms/cms.js`
+			}
 		},
 		{
-			resolve:'gatsby-plugin-favicon',
+			resolve: 'gatsby-plugin-favicon',
 			options: {
 				logo: './src/favicon.png',
-
 
 				appName: null,
 				appDescription: null,
@@ -91,6 +92,6 @@ module.exports = {
 			}
 		},
 		'gatsby-plugin-purgecss', // must be after other CSS plugins
-		'gatsby-plugin-netlify', // make sure to keep it last in the array
-	],
+		'gatsby-plugin-netlify' // make sure to keep it last in the array
+	]
 }

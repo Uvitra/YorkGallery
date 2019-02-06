@@ -1,3 +1,5 @@
+// Marked for deletion
+
 import React from 'react'
 import PropTypes from 'prop-types'
 import { kebabCase } from 'lodash'
@@ -12,7 +14,7 @@ export const BlogPostTemplate = ({
 	description,
 	tags,
 	title,
-	helmet,
+	helmet
 }) => {
 	const PostContent = contentComponent || Content
 
@@ -51,7 +53,7 @@ BlogPostTemplate.propTypes = {
 	contentComponent: PropTypes.func,
 	description: PropTypes.string,
 	title: PropTypes.string,
-	helmet: PropTypes.object,
+	helmet: PropTypes.object
 }
 
 const BlogPost = ({ data }) => {
@@ -64,11 +66,12 @@ const BlogPost = ({ data }) => {
 				contentComponent={HTMLContent}
 				description={post.frontmatter.description}
 				helmet={
-					<Helmet
-						titleTemplate="%s | Blog"
-					>
+					<Helmet titleTemplate="%s | Blog">
 						<title>{`${post.frontmatter.title}`}</title>
-						<meta name="description" content={`${post.frontmatter.description}`} />
+						<meta
+							name="description"
+							content={`${post.frontmatter.description}`}
+						/>
 					</Helmet>
 				}
 				tags={post.frontmatter.tags}
@@ -80,23 +83,23 @@ const BlogPost = ({ data }) => {
 
 BlogPost.propTypes = {
 	data: PropTypes.shape({
-		markdownRemark: PropTypes.object,
-	}),
+		markdownRemark: PropTypes.object
+	})
 }
 
 export default BlogPost
 
 export const pageQuery = graphql`
-  query BlogPostByID($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      id
-      html
-      frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        title
-        description
-        tags
-      }
-    }
-  }
+	query BlogPostByID($id: String!) {
+		markdownRemark(id: { eq: $id }) {
+			id
+			html
+			frontmatter {
+				date(formatString: "MMMM DD, YYYY")
+				title
+				description
+				tags
+			}
+		}
+	}
 `

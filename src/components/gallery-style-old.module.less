@@ -1,3 +1,5 @@
+// WARNING: marked for deletion
+
 // CSS Reset
 html,
 body,
@@ -133,23 +135,22 @@ table {
 // --------- Start of Styles ----------
 
 // Global Styles
-.app-wrapper {
-	font-family: 'Euclid Circular B', 'Helvetica Neue', Helvetica, 'Segue UI',
-		sans-serif;
+.complete-wrapper {
+	font-family: sans-serif;
 	background: hsla(0, 0%, 50%, 1);
+}
+
+a {
+	// text-decoration: none;
+	color: black;
+	// text-shadow: 1px 1px 15px hsla(210, 5%, 15%, 0.15);
+	transition: all 500ms;
 }
 
 // Navbar styles
 
 .navbar {
-	background: hsla(210, 1%, 25%, 0.25);
-	position: fixed;
-	top: 0;
-	width: 100vw;
-	// font-size: large;
-	letter-spacing: 1px;
-	font-weight: bold;
-	text-transform: uppercase;
+	background: hsla(210, 1%, 25%, 1);
 }
 
 .navbar-container {
@@ -167,13 +168,7 @@ table {
 	color: white;
 	text-shadow: 0 0 5px hsla(0, 0%, 0%, 0.15);
 	text-decoration: none;
-	// text-transform: capitalize;
-	border: 4px solid hsla(0, 0, 1, 0);
-	padding: 10px;
-	transition: all 300ms ease-in-out;
-	&:hover {
-		border: 4px solid white;
-	}
+	text-transform: capitalize;
 }
 
 .navbar-selected {
@@ -210,9 +205,6 @@ table {
 	text-shadow: 0 0 5px hsla(0, 0%, 0%, 0.15);
 	list-style: none;
 	margin: 1em 0;
-	font-size: large;
-	letter-spacing: 2px;
-	text-transform: uppercase;
 }
 
 // Background Images

@@ -7,23 +7,23 @@ exports.createPages = ({ actions, graphql }) => {
 	const { createPage } = actions
 
 	return graphql(`
-    {
-      allMarkdownRemark(limit: 1000) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              tags
-              templateKey
-            }
-          }
-        }
-      }
-    }
-  `).then(result => {
+		{
+			allMarkdownRemark(limit: 1000) {
+				edges {
+					node {
+						id
+						fields {
+							slug
+						}
+						frontmatter {
+							tags
+							templateKey
+						}
+					}
+				}
+			}
+		}
+	`).then(result => {
 		if (result.errors) {
 			result.errors.forEach(e => console.error(e.toString()))
 			return Promise.reject(result.errors)
@@ -41,8 +41,8 @@ exports.createPages = ({ actions, graphql }) => {
 				),
 				// additional data can be passed via context
 				context: {
-					id,
-				},
+					id
+				}
 			})
 		})
 
@@ -65,8 +65,8 @@ exports.createPages = ({ actions, graphql }) => {
 				path: tagPath,
 				component: path.resolve('src/templates/tags.js'),
 				context: {
-					tag,
-				},
+					tag
+				}
 			})
 		})
 	})
@@ -81,7 +81,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 		createNodeField({
 			node,
 			name: 'slug',
-			value: 'slug',
+			value: 'slug'
 		})
 	}
 }

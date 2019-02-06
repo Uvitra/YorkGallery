@@ -1,3 +1,5 @@
+// WARNING: marked for deletion
+
 import React from 'react'
 
 import IndexStyles from './gallery-style.module.less'
