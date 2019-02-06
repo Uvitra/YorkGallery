@@ -142,13 +142,13 @@ table {
 // Navbar styles
 
 .navbar {
-	background: hsla(210, 1%, 25%, 0.25);
+	background: hsla(210, 1%, 25%, 0);
 	position: fixed;
 	top: 0;
 	width: 100vw;
 	// font-size: large;
-	letter-spacing: 1px;
-	font-weight: bold;
+	letter-spacing: 2px;
+	font-weight: 600;
 	text-transform: uppercase;
 }
 
@@ -156,11 +156,21 @@ table {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 1em 2vw;
+	margin-left: 20px;
+	margin-right: 20px;
+	// padding: 1em 2vw;
 }
 
-.logo-image img {
-	width: 88px;
+.york-logo {
+	width: 144px;
+}
+
+.white-fill {
+	fill: white;
+}
+
+.york-red-fill {
+	fill: #e51535;
 }
 
 .navbar-item {
@@ -170,6 +180,7 @@ table {
 	// text-transform: capitalize;
 	border: 4px solid hsla(0, 0, 1, 0);
 	padding: 10px;
+	margin: 10px 0;
 	transition: all 300ms ease-in-out;
 	&:hover {
 		border: 4px solid white;
@@ -207,7 +218,7 @@ table {
 
 .student-name {
 	color: white;
-	text-shadow: 0 0 5px hsla(0, 0%, 0%, 0.15);
+	text-shadow: 0 0 10px hsla(0, 0%, 0%, 0.5);
 	list-style: none;
 	margin: 1em 0;
 	font-size: large;
@@ -223,9 +234,7 @@ table {
 }
 
 .gallery-image {
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-	background-position: 0% 100%;
-	background-repeat: no-repeat;
+	width: 100vw;
+	height: 100vh;
+	object-fit: cover;
 }

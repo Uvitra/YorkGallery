@@ -91,6 +91,20 @@ module.exports = {
 				}
 			}
 		},
+		{
+			resolve: 'gatsby-plugin-manifest',
+			options: {
+				name: 'Design at York Gallery',
+				short_name: 'Design@York',
+				start_url: '/',
+				background_color: '#FFFFFF',
+				theme_color: '#E51535',
+
+				display: 'standalone',
+				icon: 'src/favicon.png'
+			}
+		},
+		'gatsby-plugin-offline',
 		'gatsby-plugin-purgecss', // must be after other CSS plugins
 		'gatsby-plugin-netlify' // make sure to keep it last in the array
 	]
