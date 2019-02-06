@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { Link, graphql, withPrefix } from 'gatsby'
 import Helmet from 'react-helmet'
 import IndexStyles from '../components/gallery-style.module.less'
-import logo from '../../static/img/Logo_York_University.svg'
 
 const _ = require('lodash')
 
@@ -11,8 +10,7 @@ export default class IndexPage extends React.Component {
 	render() {
 		const { data } = this.props
 		const { edges: posts } = data.allMarkdownRemark
-
-		console.log(posts)
+		// console.log(posts)
 
 		// Tags
 		let tags = []
@@ -37,8 +35,7 @@ export default class IndexPage extends React.Component {
 		})
 		// Eliminate duplicate image paths
 		allBackgroundImages = _.uniq(allBackgroundImages)
-
-		console.log(allBackgroundImages)
+		// console.log(allBackgroundImages)
 
 		return (
 			<main className={IndexStyles.appWrapper}>
@@ -58,6 +55,7 @@ export default class IndexPage extends React.Component {
 								className={IndexStyles.yorkLogo}
 								xmlns="http://www.w3.org/2000/svg"
 								viewBox="0 0 885.8 318.9"
+								style={{ maxWidth: '25vw' }}
 							>
 								<path
 									id="path2588"
