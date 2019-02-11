@@ -55,7 +55,6 @@ export default class IndexPage extends React.Component {
 								className={IndexStyles.yorkLogo}
 								xmlns="http://www.w3.org/2000/svg"
 								viewBox="0 0 885.8 318.9"
-								style={{ maxWidth: '25vw' }}
 							>
 								<path
 									id="path2588"
