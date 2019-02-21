@@ -195,14 +195,13 @@ table {
 
 // Stacked Names and Images Container
 
-.names-image-container {
+.main-container {
 	display: grid;
 	grid-template-columns: 100vw;
 	grid-template-rows: 100vh;
 }
 
-.student-names-flex-container,
-.background-image-container {
+.main-container > article {
 	grid-column: 1;
 	grid-row: 1;
 }
@@ -238,4 +237,26 @@ table {
 	width: 100vw;
 	height: 100vh;
 	object-fit: cover;
+}
+
+.hidden {
+	// display: none;
+	// visibility: hidden;
+	opacity: 0;
+	transition: all 500ms ease-in-out;
+}
+
+.project-profile-container {
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	-webkit-backdrop-filter: blur(10px);
+	background-color: hsla(355, 6%, 18%, 0.18);
+}
+
+.project-profile-heading-one {
+	font-size: 5vw;
+	font-weight: bold;
+	text-shadow: 50px 50px 150px hsla(0, 0.5, 1, 0.15);
 }
