@@ -30,7 +30,25 @@ collections:
         }
       - { label: 'Tags', name: 'tags', widget: 'list' }
       - {
-          label: 'Images',
+          label: Images,
+          name: projectImages,
+          widget: object,
+          fields:
+            [
+              {
+                label: Image,
+                name: image,
+                widget: object,
+                fields:
+                  [
+                    { label: Image, name: image, widget: image },
+                    { label: Alt, name: alt, widget: string },
+                  ],
+              },
+            ],
+        }
+      - {
+          label: 'Image',
           name: 'projectImage',
           widget: 'image',
           media_library: { config: { multiple: true } },
