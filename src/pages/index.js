@@ -11,9 +11,12 @@ export default class IndexPage extends React.Component {
 		super(props)
 
 		this.state = {
+			queryArray: [],
+			filteredQueryArray: [],
 			text: 'text',
 			allBackgroundImages: [],
 			tags: [],
+			selectedCategory: '',
 			currentBackgroundImageID: 0,
 			backgroundImageShown: '',
 			highlightedName: '',
@@ -24,6 +27,7 @@ export default class IndexPage extends React.Component {
 		this.changeBackgroundImage = this.changeBackgroundImage.bind(this)
 		this.studentHoverImage = this.studentHoverImage.bind(this)
 		this.toggleProfile = this.toggleProfile.bind(this)
+		this.handleTagFilter = this.handleTagFilter.bind(this)
 	}
 
 	componentDidMount() {
@@ -56,7 +60,9 @@ export default class IndexPage extends React.Component {
 		allBackgroundImages = _.uniq(allBackgroundImages)
 		this.setState({
 			allBackgroundImages: allBackgroundImages,
-			tags: tags
+			tags: tags,
+			queryArray: posts,
+			filteredQueryArray: posts
 		})
 
 		// ===== End of adding all images to state =====
@@ -121,12 +127,35 @@ export default class IndexPage extends React.Component {
 		})
 	}
 
+	handleTagFilter(category) {
+		console.log(category)
+		console.log(this.state.queryArray)
+		console.log(this.state.queryArray[0].node.frontmatter.tags)
+		console.log(
+			_.findIndex(this.state.queryArray[0].node.frontmatter.tags, category)
+		)
+		let filteredArray = []
+		console.log(filteredArray)
+
+		this.setState({
+			selectedCategory: category,
+			filteredQueryArray: filteredArray
+		})
+	}
+
 	render() {
 		const { data } = this.props
 		const { edges: posts } = data.allMarkdownRemark
 		// console.log(posts)
 		// console.log(this.state.allBackgroundImages)
-
+		// console.log(this.state.queryArray)
+		{
+			// filteredArray = _.filter(this.state.queryArray, function(o) {
+			// 	_.findIndex(o.frontmatter.tags, category) >= 0
+			// 	? return o
+			// 	: return null
+			// })
+		}
 		return (
 			<main className={GalleryStyle.appWrapper}>
 				<Helmet>
@@ -312,13 +341,12 @@ export default class IndexPage extends React.Component {
 							</svg>
 						</Link>
 						{this.state.tags.map((category, index) => (
-							<div key={index}>
-								<Link
-									className={GalleryStyle.navbarItem}
-									to={'/' + category.toString()}
-								>
-									{category}
-								</Link>
+							<div
+								key={index}
+								className={GalleryStyle.navbarItem}
+								onClick={() => this.handleTagFilter(category)}
+							>
+								{category}
 							</div>
 						))}
 						<Link className={GalleryStyle.navbarItem} to="/about">
@@ -351,7 +379,7 @@ export default class IndexPage extends React.Component {
 												: {}
 							}
 						>
-							{posts.map(({ node: post }) => (
+							{this.state.filteredQueryArray.map(({ node: post }) => (
 								<li
 									className={GalleryStyle.studentName}
 									style={
@@ -479,6 +507,13 @@ export const pageQuery = graphql`
 						projectName
 						studentName
 						tags
+						projectImagesList {
+							alt
+							image {
+								absolutePath
+								relativePath
+							}
+						}
 						projectImage {
 							absolutePath
 							relativePath

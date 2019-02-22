@@ -10,10 +10,9 @@ tags:
 projectImagesList:
   - alt: First image of Christine Chan's project.
     image: /img/ysdn3006_f16_christinechan1.jpg
-  - alt: First image of Christine Chan's project.
+  - alt: Second image of Christine Chan's project.
     image: /img/ysdn3006_f16_christinechan2.jpg
-  - alt: First image of Christine Chan's project.
+  - alt: Third image of Christine Chan's project.
     image: /img/ysdn3006_f16_christinechan3.jpg
 projectImage: /img/ysdn3006_f16_christinechan1.jpg
 ---
-

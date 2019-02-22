@@ -22,9 +22,11 @@ $ npm run serve
 ## To-Do List
 
 - [ ] NavBar Filtering
-- [ ] Multiple Image Entries
+- [x] Multiple Image Entries
 - [ ] Mobile Styles
 - [ ] Image Optimizations
-- [ ] New Entries
+- [ ] Convert Old Entries
+- [ ] Add New Entries
 - [ ] Start setInterval again after selection
 - [ ] CMS Post template
+- [ ] Netlify Deployment wrong
