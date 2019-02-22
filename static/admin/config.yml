@@ -30,19 +30,19 @@ collections:
         }
       - { label: 'Tags', name: 'tags', widget: 'list' }
       - {
-          label: Images,
-          name: projectImages,
-          widget: object,
+          label: 'Project Images',
+          name: 'projectImagesList',
+          widget: 'list',
           fields:
             [
               {
-                label: Image,
-                name: image,
-                widget: object,
+                label: 'Image File and Alt Tag',
+                name: 'imageObject',
+                widget: 'object',
                 fields:
                   [
-                    { label: Image, name: image, widget: image },
-                    { label: Alt, name: alt, widget: string },
+                    { label: 'Image', name: 'image', widget: 'image' },
+                    { label: 'Alt Tag', name: 'alt', widget: 'string' },
                   ],
               },
             ],
