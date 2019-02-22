@@ -35,16 +35,8 @@ collections:
           widget: 'list',
           fields:
             [
-              {
-                label: 'Image File and Alt Tag',
-                name: 'imageObject',
-                widget: 'object',
-                fields:
-                  [
-                    { label: 'Image', name: 'image', widget: 'image' },
-                    { label: 'Alt Tag', name: 'alt', widget: 'string' },
-                  ],
-              },
+              { label: 'Image', name: 'image', widget: 'image' },
+              { label: 'Alt Tag', name: 'alt', widget: 'string' },
             ],
         }
       - {
