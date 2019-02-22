@@ -336,22 +336,6 @@ export default class IndexPage extends React.Component {
 						/>
 					</article>
 
-					{
-						//
-						// <article className={GalleryStyle.focusedBackgroundImageContainer}>
-						// 	<img
-						// 		className={
-						// 			this.state.displayFocusedImage
-						// 				? GalleryStyle.galleryImage
-						// 				: GalleryStyle.hidden
-						// 		}
-						// 		// key={index}
-						// 		src={withPrefix(`/img/${this.state.focusedBackgroundImage}`)}
-						// 		alt=""
-						// 	/>
-						// </article>
-					}
-
 					<article className={GalleryStyle.studentNamesFlexContainer}>
 						<ul
 							className={GalleryStyle.namesUnorderedList}
@@ -401,12 +385,6 @@ export default class IndexPage extends React.Component {
 								: { visibility: 'hidden', opacity: '0' }
 						}
 					>
-						<button
-							className={GalleryStyle.closeProfileButton}
-							onClick={() => this.toggleProfile('')}
-						>
-							✕
-						</button>
 						<div className={GalleryStyle.projectTextContainer}>
 							<h1 className={GalleryStyle.projectProfileProjectName}>
 								{this.state.projectEdgeSelected !== -1
@@ -430,9 +408,41 @@ export default class IndexPage extends React.Component {
 									  ].node.frontmatter.description
 									: ''}
 							</p>
+							<button
+								className={GalleryStyle.closeProfileButton}
+								onClick={() => this.toggleProfile('')}
+							>
+								✕
+							</button>
 						</div>
 						<div className={GalleryStyle.projectMediaContainer}>
-							<img src="" alt="This is an image!" />
+							<img
+								className={GalleryStyle.projectMediaItem}
+								src={
+									this.state.projectEdgeSelected !== -1
+										? withPrefix(
+											`/img/${
+												this.props.data.allMarkdownRemark.edges[
+													this.state.projectEdgeSelected
+												].node.frontmatter.projectImage.relativePath
+											}`
+										  )
+										: ''
+								}
+								alt={
+									this.state.projectEdgeSelected !== -1
+										? `An image for ${
+											this.props.data.allMarkdownRemark.edges[
+												this.state.projectEdgeSelected
+											].node.frontmatter.studentName
+										  }’s project ${
+											this.props.data.allMarkdownRemark.edges[
+												this.state.projectEdgeSelected
+											].node.frontmatter.projectName
+										  }.`
+										: ''
+								}
+							/>
 						</div>
 					</article>
 				</section>

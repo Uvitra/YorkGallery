@@ -266,7 +266,7 @@ table {
 	transition: all 300ms ease-in-out;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: 80vh;
+	grid-template-rows: 95%;
 
 	& > div {
 		margin-top: 150px;
@@ -296,7 +296,7 @@ table {
 	word-break: break-word;
 }
 
-.project-profile-student-name {
+.project-profile-description {
 	font-size: 16px;
 	font-weight: normal;
 	padding-bottom: 0.25em;
@@ -305,13 +305,19 @@ table {
 
 .project-media-container {
 	grid-column: 2 / col-end;
+	margin-right: 5%;
+	overflow: scroll;
+	background: blue;
+}
+
+.project-media-item {
+	width: 100%;
+	height: auto;
+	margin-bottom: 20px;
 }
 
 .close-profile-button {
-	grid-row: 1;
-	grid-column: col-end;
-	margin-top: 100px;
-	margin-right: 50px;
+	margin-top: 100%;
 	width: 50px;
 	height: 50px;
 	background-color: hsla(355, 0, 0, 0.25);
