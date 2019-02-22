@@ -186,6 +186,9 @@ table {
 	&:hover {
 		border: 4px solid white;
 	}
+	& svg:hover {
+		border: 0 solid hsla(0, 0, 1, 0);
+	}
 }
 
 .navbar-selected {
@@ -211,19 +214,27 @@ table {
 .student-names-flex-container {
 	width: 100vw;
 	height: 100vh;
+	background-color: hsla(355, 5%, 5%, 0.15);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
+.names-unordered-list {
+	// width: 60vw;
+	// column-count: 2;
+	column-fill: balance;
+}
+
 .student-name {
 	color: white;
-	text-shadow: 0 0 10px hsla(0, 0%, 0%, 0.5);
+	text-shadow: 0 0 10px hsla(0, 0%, 0%, 0.15);
 	list-style: none;
-	margin: 1em 0;
+	padding: 0.5em 0;
 	font-size: large;
 	letter-spacing: 2px;
 	text-transform: uppercase;
+	transition: opacity 300ms ease;
 }
 
 // Background Images
@@ -246,17 +257,73 @@ table {
 	transition: all 500ms ease-in-out;
 }
 
+// Profile styles
+
 .project-profile-container {
+	color: white;
+	-webkit-backdrop-filter: blur(10px);
+	background-color: hsla(355, 3.125%, 6.25%, 0.5);
+	transition: all 300ms ease-in-out;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 80vh;
+
+	& > div {
+		margin-top: 150px;
+		grid-row: 1;
+	}
+}
+
+.project-text-container {
+	grid-column: 1;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.project-profile-project-name {
+	font-size: 48px;
+	font-weight: bold;
+	border-bottom: 4px solid white;
+	padding-bottom: 0.25em;
+	margin-bottom: 0.25em;
+	word-break: break-word;
+}
+
+.project-profile-student-name {
+	font-size: 24px;
+	font-weight: normal;
+	padding-bottom: 0.25em;
+	word-break: break-word;
+}
+
+.project-profile-student-name {
+	font-size: 16px;
+	font-weight: normal;
+	padding-bottom: 0.25em;
+	word-break: break-word;
+}
+
+.project-media-container {
+	grid-column: 2 / col-end;
+}
+
+.close-profile-button {
+	grid-row: 1;
+	grid-column: col-end;
+	margin-top: 100px;
+	margin-right: 50px;
+	width: 50px;
+	height: 50px;
+	background-color: hsla(355, 0, 0, 0.25);
 	color: white;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	-webkit-backdrop-filter: blur(10px);
-	background-color: hsla(355, 6%, 18%, 0.18);
-}
-
-.project-profile-heading-one {
-	font-size: 5vw;
-	font-weight: bold;
-	text-shadow: 50px 50px 150px hsla(0, 0.5, 1, 0.15);
+	border-radius: 50%;
+	border: 0px solid white;
+	outline: none;
+	transition: background-color 300ms ease;
+	&:hover {
+		background-color: hsla(355, 0, 1, 0.25);
+	}
 }

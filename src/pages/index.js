@@ -14,12 +14,16 @@ export default class IndexPage extends React.Component {
 			text: 'text',
 			allBackgroundImages: [],
 			tags: [],
-			currentBackgroundImageID: 0, // this needs to change to allBackgroundImages.length
+			currentBackgroundImageID: 0,
 			backgroundImageShown: '',
-			displayFocusedImage: false
+			highlightedName: '',
+			displayFocusedImage: false,
+			profileDisplay: false,
+			projectEdgeSelected: -1
 		}
 		this.changeBackgroundImage = this.changeBackgroundImage.bind(this)
 		this.studentHoverImage = this.studentHoverImage.bind(this)
+		this.toggleProfile = this.toggleProfile.bind(this)
 	}
 
 	componentDidMount() {
@@ -93,17 +97,35 @@ export default class IndexPage extends React.Component {
 				currentBackgroundImageID: backgroundImageArrayIndex,
 				backgroundImageShown: this.state.allBackgroundImages[
 					backgroundImageArrayIndex
-				]
+				],
+				highlightedName: idOfEntry
 			})
 		} else {
-			this.timerID = setInterval(() => this.changeBackgroundImage(), 4000, true)
+			// this.timerID = setInterval(() => this.changeBackgroundImage(), 4000, true)
+			this.setState({
+				highlightedName: ''
+			})
 		}
+	}
+
+	toggleProfile(idOfClickedName) {
+		let edgeIndex = _.findIndex(this.props.data.allMarkdownRemark.edges, {
+			node: {
+				id: idOfClickedName
+			}
+		})
+
+		this.setState({
+			profileDisplay: !this.state.profileDisplay,
+			projectEdgeSelected: edgeIndex
+		})
 	}
 
 	render() {
 		const { data } = this.props
 		const { edges: posts } = data.allMarkdownRemark
 		// console.log(posts)
+		// console.log(this.state.allBackgroundImages)
 
 		return (
 			<main className={GalleryStyle.appWrapper}>
@@ -331,13 +353,39 @@ export default class IndexPage extends React.Component {
 					}
 
 					<article className={GalleryStyle.studentNamesFlexContainer}>
-						<ul className={GalleryStyle.namesUnorderedList}>
+						<ul
+							className={GalleryStyle.namesUnorderedList}
+							style={
+								this.state.allBackgroundImages.length > 15
+									? { width: '100vw', columnCount: '4' }
+									: this.state.allBackgroundImages.length > 10
+										? { width: '75vw', columnCount: '3' }
+										: this.state.allBackgroundImages.length > 5
+											? { width: '50vw', columnCount: '2' }
+											: this.state.allBackgroundImages.length > 0
+												? { columnCount: '1' }
+												: {}
+							}
+						>
 							{posts.map(({ node: post }) => (
 								<li
 									className={GalleryStyle.studentName}
+									style={
+										this.state.profileDisplay &&
+										this.state.highlightedName !== post.id &&
+										this.state.highlightedName !== ''
+											? { pointerEvents: 'none', opacity: '0.5' }
+											: this.state.highlightedName !== post.id &&
+											  this.state.highlightedName !== ''
+												? { opacity: '0.5' }
+												: this.state.profileDisplay
+													? { opacity: '0', pointerEvents: 'none' }
+													: { opacity: '1', cursor: 'pointer' } // This is the 'normal' state meaning clickable and full opacity.
+									}
 									key={post.id}
-									onMouseEnter={e => this.studentHoverImage(post.id, true)}
-									onMouseLeave={e => this.studentHoverImage(post.id, false)}
+									onMouseEnter={() => this.studentHoverImage(post.id, true)}
+									onMouseLeave={() => this.studentHoverImage(post.id, false)}
+									onClick={() => this.toggleProfile(post.id)}
 								>
 									{post.frontmatter.studentName}
 								</li>
@@ -347,11 +395,45 @@ export default class IndexPage extends React.Component {
 
 					<article
 						className={GalleryStyle.projectProfileContainer}
-						style={{ display: 'none' }}
+						style={
+							this.state.profileDisplay
+								? { visibility: 'visible', opacity: '1' }
+								: { visibility: 'hidden', opacity: '0' }
+						}
 					>
-						<h1 className={GalleryStyle.projectProfileHeadingOne}>
-							Profile Title
-						</h1>
+						<button
+							className={GalleryStyle.closeProfileButton}
+							onClick={() => this.toggleProfile('')}
+						>
+							✕
+						</button>
+						<div className={GalleryStyle.projectTextContainer}>
+							<h1 className={GalleryStyle.projectProfileProjectName}>
+								{this.state.projectEdgeSelected !== -1
+									? this.props.data.allMarkdownRemark.edges[
+										this.state.projectEdgeSelected
+									  ].node.frontmatter.projectName
+									: ''}
+							</h1>
+							<h2 className={GalleryStyle.projectProfileStudentName}>
+								Project by —{' '}
+								{this.state.projectEdgeSelected !== -1
+									? this.props.data.allMarkdownRemark.edges[
+										this.state.projectEdgeSelected
+									  ].node.frontmatter.studentName
+									: ''}
+							</h2>
+							<p className={GalleryStyle.projectProfileDescription}>
+								{this.state.projectEdgeSelected !== -1
+									? this.props.data.allMarkdownRemark.edges[
+										this.state.projectEdgeSelected
+									  ].node.frontmatter.description
+									: ''}
+							</p>
+						</div>
+						<div className={GalleryStyle.projectMediaContainer}>
+							<img src="" alt="This is an image!" />
+						</div>
 					</article>
 				</section>
 			</main>
