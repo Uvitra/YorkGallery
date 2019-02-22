@@ -21,6 +21,8 @@ $ npm run serve
 
 ## To-Do List
 
+- [ ] Update By Wednesday
+
 - [ ] NavBar Filtering
 - [x] Multiple Image Entries
 - [ ] Mobile Styles
@@ -30,3 +32,6 @@ $ npm run serve
 - [ ] Start setInterval again after selection
 - [ ] CMS Post template
 - [ ] Netlify Deployment wrong
+- [ ] add website functionality
+- [ ] Add video embed functionality
+- [ ] Design At York GitHub Team

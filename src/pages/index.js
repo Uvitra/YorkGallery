@@ -24,6 +24,7 @@ export default class IndexPage extends React.Component {
 			profileDisplay: false,
 			projectEdgeSelected: -1
 		}
+
 		this.changeBackgroundImage = this.changeBackgroundImage.bind(this)
 		this.studentHoverImage = this.studentHoverImage.bind(this)
 		this.toggleProfile = this.toggleProfile.bind(this)
@@ -135,6 +136,13 @@ export default class IndexPage extends React.Component {
 			_.findIndex(this.state.queryArray[0].node.frontmatter.tags, category)
 		)
 		let filteredArray = []
+		filteredArray = _.filter(this.state.queryArray, {
+			node: {
+				frontmatter: {
+					tags: category
+				}
+			}
+		})
 		console.log(filteredArray)
 
 		this.setState({
