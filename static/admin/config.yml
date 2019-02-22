@@ -33,7 +33,6 @@ collections:
           label: 'Images',
           name: 'projectImage',
           widget: 'image',
-          allow_multiple: true,
           media_library: { config: { multiple: true } },
         }
 
