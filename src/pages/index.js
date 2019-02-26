@@ -131,9 +131,9 @@ export default class IndexPage extends React.Component {
 	handleTagFilter(category) {
 		console.log(category)
 		console.log(this.state.queryArray)
-		console.log(this.state.queryArray[0].node.frontmatter.tags)
+		console.log(this.state.queryArray[5].node.frontmatter.tags)
 		console.log(
-			_.findIndex(this.state.queryArray[0].node.frontmatter.tags, category)
+			_.findIndex(this.state.queryArray[5].node.frontmatter.tags, category)
 		)
 		let filteredArray = []
 		filteredArray = _.filter(this.state.queryArray, {
