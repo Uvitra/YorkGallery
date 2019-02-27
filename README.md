@@ -23,15 +23,15 @@ $ npm run serve
 
 - [ ] Update By Wednesday
 
-- [ ] NavBar Filtering
-- [x] Multiple Image Entries
+- [ ] NavBar Filtering \*
+- [x] ~~Multiple Image Entries~~
 - [ ] Mobile Styles
-- [ ] Image Optimizations
-- [ ] Convert Old Entries
-- [ ] Add New Entries
+- [ ] Image Optimizations \*
+- [ ] Convert Old Entries \*
+- [ ] Add New Entries \*
 - [ ] Start setInterval again after selection
 - [ ] CMS Post template
-- [ ] Netlify Deployment wrong
-- [ ] add website functionality
-- [ ] Add video embed functionality
+- [x] ~~Netlify Deployment wrong -> PurgeCSS the culprit~~
+- [ ] add website (iFrame?) functionality to CMS
+- [ ] Add video embed (Upload as well?) functionality
 - [ ] Design At York GitHub Team
