@@ -62,7 +62,6 @@
 	},
 	"devDependencies": {
 		"prettier": "^1.7.4",
-		"prettier-stylelint": "^0.4.2",
 		"rimraf": "^2.6.2",
 		"stylelint-config-recommended": "^2.1.0"
 	},

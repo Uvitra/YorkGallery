@@ -14,7 +14,11 @@ export default class IndexPage extends React.Component {
 			queryArray: [],
 			filteredQueryArray: [],
 			text: 'text',
-			allBackgroundImages: [],
+			allBackgroundImages: [
+				'/img/ysdn3006_f16_christinechan1.jpg',
+				'/img/ysdn3006_f16_christinechan2.jpg',
+				'/img/ysdn3006_f16_christinechan3.jpg'
+			],
 			tags: [],
 			selectedCategory: '',
 			currentBackgroundImageID: 0,
@@ -51,10 +55,13 @@ export default class IndexPage extends React.Component {
 		let allBackgroundImages = []
 		// Iterate through each post, putting all found images relativePaths into `images`
 		posts.forEach(edge => {
-			if (_.get(edge, 'node.frontmatter.projectImage.relativePath')) {
-				allBackgroundImages = allBackgroundImages.concat(
-					edge.node.frontmatter.projectImage.relativePath
-				)
+			if (_.get(edge, 'node.frontmatter.projectImagesList')) {
+				edge.node.frontmatter.projectImagesList.forEach(imageAndAlt => {
+					allBackgroundImages = allBackgroundImages.concat(imageAndAlt.image)
+				})
+				// allBackgroundImages = allBackgroundImages.concat(
+				// 	edge.node.frontmatter.projectImagesList[0].image
+				// )
 			}
 		})
 		// Eliminate duplicate image paths
@@ -154,8 +161,8 @@ export default class IndexPage extends React.Component {
 	render() {
 		const { data } = this.props
 		const { edges: posts } = data.allMarkdownRemark
-		// console.log(posts)
-		// console.log(this.state.allBackgroundImages)
+		console.log(posts)
+		console.log(this.state.allBackgroundImages)
 		// console.log(this.state.queryArray)
 		{
 			// filteredArray = _.filter(this.state.queryArray, function(o) {
@@ -367,7 +374,7 @@ export default class IndexPage extends React.Component {
 						<img
 							className={GalleryStyle.galleryImage}
 							// key={uuid()}
-							src={withPrefix(`/img/${this.state.backgroundImageShown}`)}
+							src={withPrefix(`${this.state.backgroundImageShown}`)}
 							alt=""
 						/>
 					</article>
@@ -498,15 +505,11 @@ IndexPage.propTypes = {
 export const pageQuery = graphql`
 	query IndexQuery {
 		allMarkdownRemark(
-			sort: { order: DESC, fields: [frontmatter___date] }
 			filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
 		) {
 			edges {
 				node {
 					id
-					fields {
-						slug
-					}
 					frontmatter {
 						title
 						templateKey
@@ -517,14 +520,7 @@ export const pageQuery = graphql`
 						tags
 						projectImagesList {
 							alt
-							image {
-								absolutePath
-								relativePath
-							}
-						}
-						projectImage {
-							absolutePath
-							relativePath
+							image
 						}
 					}
 				}
