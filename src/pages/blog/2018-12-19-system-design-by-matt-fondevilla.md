@@ -9,6 +9,10 @@ tags:
 projectImagesList:
   - alt: image1
     image: /img/story-1.jpg
+  - alt: story 2
+    image: /img/story-2.jpg
+  - alt: story 3
+    image: /img/story-3.jpg
 projectImage: /img/story-1.jpg
 ---
 
