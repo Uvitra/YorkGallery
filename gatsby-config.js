@@ -6,6 +6,7 @@ module.exports = {
 	plugins: [
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-less',
+		'gatsby-plugin-lodash',
 		{
 			// keep as first gatsby-source-filesystem plugin for gatsby image support
 			resolve: 'gatsby-source-filesystem',
@@ -28,7 +29,6 @@ module.exports = {
 				name: 'images'
 			}
 		},
-		'gatsby-plugin-lodash',
 		'gatsby-plugin-sharp',
 		'gatsby-transformer-sharp',
 		{
@@ -48,6 +48,12 @@ module.exports = {
 							// the content container as this plugin uses this as the
 							// base for generating different widths of each image.
 							maxWidth: 2048
+						}
+					},
+					{
+						resolve: 'gatsby-remark-copy-linked-files',
+						options: {
+							destinationDir: 'static'
 						}
 					}
 				]

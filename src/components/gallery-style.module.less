@@ -137,6 +137,7 @@ table {
 	font-family: 'Euclid Circular B', 'Helvetica Neue', Helvetica, 'Segue UI',
 		sans-serif;
 	background: hsla(0, 0%, 50%, 1);
+	overflow: hidden;
 }
 
 // Navbar styles
@@ -156,10 +157,6 @@ table {
 	margin-left: 20px;
 	margin-right: 20px;
 	// padding: 1em 2vw;
-}
-
-.york-logo {
-	width: 144px;
 }
 
 .white-fill {
@@ -189,6 +186,10 @@ table {
 	& svg:hover {
 		border: 0 solid hsla(0, 0, 1, 0);
 	}
+}
+
+svg.navbar-item {
+	width: 144px;
 }
 
 .navbar-selected {
@@ -307,7 +308,7 @@ table {
 	grid-column: 2 / col-end;
 	margin-right: 5%;
 	overflow: scroll;
-	background: blue;
+	// background: blue;
 }
 
 .project-media-item {

@@ -1,3 +1,78 @@
+// const _ = require('lodash')
+// const path = require('path')
+// const { createFilePath } = require('gatsby-source-filesystem')
+// const { fmImagesToRelative } = require('gatsby-remark-relative-images')
+
+// exports.onCreateNode = ({ node, actions, getNode }) => {
+// 	const { createNodeField } = actions
+// 	fmImagesToRelative(node) // convert image paths for gatsby images
+//
+// 	if (node.internal.type === 'MarkdownRemark') {
+// 		const value = createFilePath({ node, getNode })
+// 		createNodeField({
+// 			name: 'slug',
+// 			node,
+// 			value
+// 		})
+// 	}
+// }
+
+// exports.onCreateNode = ({ node }) => {
+// 	fmImagesToRelative(node)
+// }
+
+// exports.onCreateNode = ({ node, actions, getNode }) => {
+// 	const { createNodeField } = actions
+// 	const { frontmatter } = node
+//
+// 	if (frontmatter) {
+// 		if (frontmatter.projectImagesList != null) {
+// 			frontmatter.projectImagesList.map(imageAndAlt => {
+// 				console.log('\n', imageAndAlt.image)
+// 				const photo = imageAndAlt.image
+// 				createNodeField({
+// 					node,
+// 					name: 'photo',
+// 					value: photo
+// 				})
+// 			})
+// 		}
+// 	}
+// 	// fmImagesToRelative(node)
+// }
+
+// exports.onCreateNode = ({ node, actions, getNode }) => {
+// 	const { createNodeField } = actions
+// 	const { frontmatter } = node
+// 	if (frontmatter) {
+// 		const { projectImagesList } = frontmatter
+// 		projectImagesList.map((imageAndAlt, index) => {
+// 			if (imageAndAlt.image) {
+// 				if (imageAndAlt.image.indexOf('/img') === 0) {
+// 					frontmatter.projectImagesList[index] = path.relative(
+// 						path.dirname(node.fileAbsolutePath),
+// 						path.join(__dirname, '/static/', imageAndAlt.image)
+// 					)
+// 				}
+// 			}
+// 		})
+// 	}
+// 	if (node.internal.type === 'MarkdownRemark') {
+// 		const value = createFilePath({ node, getNode })
+// 		createNodeField({
+// 			node,
+// 			name: 'slug',
+// 			value
+// 		})
+// 		createNodeField({
+// 			node,
+// 			name: 'collection',
+// 			value
+// 		})
+// 	}
+// 	fmImagesToRelative(node)
+// }
+
 {
 	// const _ = require('lodash')
 	// const path = require('path')

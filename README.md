@@ -21,12 +21,10 @@ $ npm run serve
 
 ## To-Do List
 
-- [ ] Update By Wednesday
-
-- [ ] NavBar Filtering \*
+- [x] NavBar Filtering
 - [x] ~~Multiple Image Entries~~
 - [ ] Mobile Styles
-- [ ] Image Optimizations \*
+- [ ] Image Optimization \*
 - [ ] Convert Old Entries \*
 - [ ] Add New Entries \*
 - [ ] Start setInterval again after selection
