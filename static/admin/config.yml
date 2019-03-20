@@ -39,12 +39,12 @@ collections:
               { label: 'Alt Tag', name: 'alt', widget: 'string' },
             ],
         }
-      - {
-          label: 'Image',
-          name: 'projectImage',
-          widget: 'image',
-          media_library: { config: { multiple: 'true' } },
-        }
+      # - {
+      #     label: 'Image',
+      #     name: 'projectImage',
+      #     widget: 'image',
+      #     media_library: { config: { multiple: 'true' } },
+      #   }
 
   - name: 'pages'
     label: 'Pages'
