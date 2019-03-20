@@ -39,6 +39,8 @@ collections:
               { label: 'Alt Tag', name: 'alt', widget: 'string' },
             ],
         }
+        - { label: 'Video Embedded', name: 'embeddedVideo', widget: 'text' }
+        - { label: 'Video Upload', name: 'uploadedVideo', widget: 'file' }
       # - {
       #     label: 'Image',
       #     name: 'projectImage',

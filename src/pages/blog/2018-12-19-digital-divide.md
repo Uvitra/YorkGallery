@@ -14,5 +14,4 @@ projectImagesList:
     image: /img/ysdn3006_f16_christinechan2.jpg
   - alt: Third image of Christine Chan's project.
     image: /img/ysdn3006_f16_christinechan3.jpg
-projectImage: /img/ysdn3006_f16_christinechan1.jpg
 ---
